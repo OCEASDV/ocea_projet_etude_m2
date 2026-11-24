@@ -73,10 +73,10 @@ project/
 ## 3. Conventions de nommage
 
 | Élément | Convention | Exemple 
-|---|---|---|---|
+|---|---|---
 | Variables | `camelCase` | `currentUser`, `isLoading` 
 | Fonctions | `camelCase`, verbe explicite | `fetchUserProfile()` 
-| Classes | `PascalCase` | `UserService`, `ApiError` | `user_service` |
+| Classes | `PascalCase` | `UserService`, `ApiError` | `user_service` 
 | Composants React Native | `PascalCase` | `ProfileScreen`, `UserCard`
 | Objets de configuration | `camelCase` | `apiConfig` 
 | Fichiers de composants | `PascalCase` | `UserCard.tsx` / `UserCard.jsx`
