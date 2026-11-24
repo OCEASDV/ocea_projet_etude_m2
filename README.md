@@ -153,8 +153,10 @@ Utiliser une branche principale protégée `main`. Toute fonctionnalité ou corr
 
 ### Conventional Commits
 
+Doc Gitmoji -> https://gitmoji.dev/
+
 Format :
-git commit -m "feat: LOOT-42 - ajout de la création d'une chasse au trésor"
+git commit -m ":sparkles: LOOT-42 - add hunt feature"
 
 "LOOTOPIA-XX" est la référence du ticket en question.
 
