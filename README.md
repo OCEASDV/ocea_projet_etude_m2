@@ -8,11 +8,11 @@
 1. [Principes généraux](#1-principes-généraux)
 2. [Arborescence du dépôt](#2-architecture-du-dépôt)
 3. [Conventions de nommage](#3-conventions-de-nommage)
-4. [Application React Native](#6-application-react-native)
-5. [Commentaires et documentation](#7-commentaires-et-documentation)
-6. [Tests et qualité](#10-tests-et-qualité)
-7. [Git : branches et commits](#11-git--branches-et-commits)
-8. [Intégration Jira](#13-intégration-jira)
+4. [Application React Native](#4-application-react-native)
+5. [Commentaires et documentation](#5-commentaires-et-documentation)
+6. [Tests et qualité](#6-tests-et-qualité)
+7. [Git : branches et commits](#7-git--branches-et-commits)
+8. [Intégration Jira](#8-intégration-jira)
 
 ---
 
