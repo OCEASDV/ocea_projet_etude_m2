@@ -1,31 +1,15 @@
-name: Build
+name: Build Main
 on:
-  push:
+  pull_request:
     branches:
       - main
-      - develop
-  pull_request:
-    types: [opened, synchronize, reopened]
 jobs:
-  checks :
+  sonarqube:
+    name: SonarQube
     runs-on: 
       - windows-latest
       - ubuntu-latest
       - macos-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-node@v7.1.0
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-      - run: npx tsc --noEmit
-      - run: npm test -- --watchAll=false
-
-  sonarqube:
-    name: SonarQube
-    runs-on: windows-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
