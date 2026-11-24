@@ -163,7 +163,7 @@ Lorsqu'une branche a été merge, on la supprime.
 Doc Gitmoji -> https://gitmoji.dev/
 
 Format :
-git commit -m ":sparkles: LOOT-42 - add hunt feature"
+git commit -m ":sparkles: LOOTOPIA-42 - add hunt feature"
 
 "LOOTOPIA-XX" est la référence du ticket en question.
 
