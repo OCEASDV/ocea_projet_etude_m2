@@ -151,14 +151,30 @@ count += 1;
 
 Utiliser une branche principale protégée `main`. Toute fonctionnalité ou correction passe par une branche dédiée et une pull request, sauf procédure d'urgence explicitement prévue.
 
+main
+develop
+chore
+feature
+
+Lorsqu'une branche a été merge, on la supprime. 
+
 ### Conventional Commits
 
 Doc Gitmoji -> https://gitmoji.dev/
 
 Format :
-git commit -m ":sparkles: LOOT-42 - add hunt feature"
+git commit -m ":sparkles: LOOTOPIA-42 - add hunt feature"
 
 "LOOTOPIA-XX" est la référence du ticket en question.
+
+Type de commit : 
+feat 
+fix
+doc
+style
+refactor
+test
+chore
 
 ## 8. Intégration Jira
 
