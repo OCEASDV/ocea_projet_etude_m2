@@ -5,21 +5,6 @@ on:
     branches:
       - develop
 
-<<<<<<< HEAD
-jobs:
-  validate-pr-title:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check PR title
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-        run: |
-          conventional='^[a-zA-Z][a-zA-Z0-9-]*(\([^()[:space:]][^()]*\))?!?: [^[:space:]]'
-          if [[ ! $PR_TITLE =~ $conventional ]]; then
-            echo '::error::Use a Conventional Commit title, e.g. feat(hunt): add a new hunt.'
-            exit 1
-          fi
-=======
 permissions:
   contents: read
 
@@ -47,4 +32,3 @@ jobs:
             fi
           done
           exit "$invalid"
->>>>>>> b3223c0b3d45a4c98383a81747d23ce403416dcc
