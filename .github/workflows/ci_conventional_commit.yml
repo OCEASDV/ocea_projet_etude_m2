@@ -1,0 +1,23 @@
+name: PR Conventional Commit Validation
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types: [opened, synchronize, reopened, edited]
+
+permissions: {}
+
+jobs:
+  validate-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          conventional='^[a-zA-Z][a-zA-Z0-9-]*(\([^()[:space:]][^()]*\))?!?: [^[:space:]]'
+          if [[ ! $PR_TITLE =~ $conventional ]]; then
+            echo '::error::Use a Conventional Commit title, e.g. feat(hunt): add a new hunt.'
+            exit 1
+          fi
