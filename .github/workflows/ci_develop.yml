@@ -1,10 +1,11 @@
 name: Build Develop
 on:
-  push:
+  pull_request:
     branches:
       - develop
 jobs:
   checks :
+    name: Checks conventional PR title
     runs-on: 
       - windows-latest
       - ubuntu-latest
