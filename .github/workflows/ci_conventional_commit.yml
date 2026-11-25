@@ -5,30 +5,16 @@ on:
     branches:
       - develop
 
-permissions:
-  contents: read
-
 jobs:
-  validate-commit-title:
+  validate-pr-title:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-        with:
-          fetch-depth: 0
-      - name: Check commit titles
+      - name: Check PR title
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           conventional='^[a-zA-Z][a-zA-Z0-9-]*(\([^()[:space:]][^()]*\))?!?: [^[:space:]]'
-          commits=$(git rev-list --no-merges "$BASE_SHA..$HEAD_SHA")
-          invalid=0
-          for commit in $commits; do
-            message=$(git show -s --format=%B "$commit")
-            subject=${message%%$'\n'*}
-            if [[ ! $subject =~ $conventional ]]; then
-              echo "::error::Commit ${commit:0:7} must use a Conventional Commit title, e.g. feat(hunt): add a new hunt."
-              invalid=1
-            fi
-          done
-          exit "$invalid"
+          if [[ ! $PR_TITLE =~ $conventional ]]; then
+            echo '::error::Use a Conventional Commit title, e.g. feat(hunt): add a new hunt.'
+            exit 1
+          fi
