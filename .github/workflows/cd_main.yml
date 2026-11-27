@@ -1,0 +1,6 @@
+name: Release Main
+on:
+  push:
+    branches:
+      - main
+jobs:
